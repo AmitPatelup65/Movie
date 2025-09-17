@@ -37,9 +37,9 @@ function App() {
        { searchItem.map((item,idx)=>{
           return <div className='w-auto h-auto items-center rounded-md'>
              <img className='h-95 w-auto border-1 rounded hover:scale-95 shadow-lg shadow-amber-50 object-cover items-center' src={item.Poster} alt="" />
-            <div className='p-2'>
-            <h1 className='font-semibold'>🎬{item.Title}</h1>
-            <h1 className='font-semibold'>📅{item.Year}</h1>
+            <div className='p-2 '>
+            <h1 className='font-semibold mb-2'>🎬{item.Title}</h1>
+            <h1 className='font-semibold mb-2'>📅{item.Year}</h1>
             <h1 className='font-semibold'>⭐{item.imdbID}</h1>
           </div>
           </div>
