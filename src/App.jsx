@@ -26,17 +26,23 @@ function App() {
    console.log(search)
   return (
     <div className=''> 
-     <nav className='bg-zinc-800 h-25 flex justify-center items-center'>
-       <input className='border-3 rounded-md p-2 bg-white' value={search} onChange={(e)=>setsearch(e.target.value)} type="text" placeholder='Search  Movie' />
-    <button type='submit' className='border-3 rounded-md p-2 active:scale-90 ml-3 bg-amber-600'> 
+    
+     <nav className='bg-zinc-800 h-25 flex justify-start  items-center fixed z-10 top-0 left-0 w-full'>
+      <h1 className='text-2xl ml-3 text-white font-bold'>☰ HD-Hub-Movie</h1>
+       <input className='border-3 rounded-md p-2 bg-white ml-80' value={search} onChange={(e)=>setsearch(e.target.value)} type="text" placeholder='Search  Movie' />
+
+      <button type='submit' className='border-3 rounded-md p-2 active:scale-90 ml-3 bg-amber-600'> 
       Search</button>
+   
      </nav>
-    <div className='p-10 '>
+    <div className='pt-25'>
       {searchItem.length ? (
-       <div className='bg-cover bg-center bg-[url("https://imgs.search.brave.com/Qmg84udBI91P4e7mYf1MEoKIdcXDb4VVIkVRPds9T9g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9zY2kt/ZmktaW5kdXN0cmlh/bC1wYW5lbC1mdXR1/cmlzdGljLWNvbmNl/cHQtZGVzaWduLTE2/OTg1NzU1NC5qcGc")] grid grid-flow-col grid-rows-3 gap-16 scroll-auto ransition-transform duration-300'>
+       <div className='bg-cover bg-center bg-[url("https://images.unsplash.com/photo-1533637041618-f0e4c869801e?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] grid grid-flow-col grid-rows-4 gap-10 scroll-auto ransition-transform duration-300 p-4'>
        { searchItem.map((item,idx)=>{
-          return <div className='w-auto bg-amber-400 bg-opacity-10 h-auto items-center rounded-md'>
-             <img className='h-95 w-auto border-1 rounded hover:scale-95 shadow-lg shadow-amber-50 object-cover items-center' src={item.Poster} alt="" />
+          return <div className='w-80 bg-zinc-300/20 text-black h-auto items-center rounded-md hover:scale-95  '>
+         <div className='flex justify-between '>
+              <img className='h-95 w-75  rounded-md opacity-90  shadow-lg shadow-amber-50 object-cover items-center ml-4 p-2' src={item.Poster} alt="" />
+         </div>
             <div className='p-2 '>
             <h1 className='font-semibold mb-2'>🎬{item.Title}</h1>
             <h1 className='font-semibold mb-2'>📅{item.Year}</h1>
