@@ -12,7 +12,7 @@ function App() {
     return item.Title.toLowerCase().includes(fetchItem);
   })
    const getdata=async()=>{
-    const fetchdata=await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${search}`)
+    const fetchdata=await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${search || "marvel"}`)
     const result =await fetchdata.json()
     setdata(result.Search || [])
      
@@ -33,9 +33,9 @@ function App() {
      </nav>
     <div className='p-10 '>
       {searchItem.length ? (
-       <div className='grid grid-flow-col grid-rows-3 gap-16 scroll-auto ransition-transform duration-300'>
+       <div className='bg-cover bg-center bg-[url("https://imgs.search.brave.com/Qmg84udBI91P4e7mYf1MEoKIdcXDb4VVIkVRPds9T9g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9zY2kt/ZmktaW5kdXN0cmlh/bC1wYW5lbC1mdXR1/cmlzdGljLWNvbmNl/cHQtZGVzaWduLTE2/OTg1NzU1NC5qcGc")] grid grid-flow-col grid-rows-3 gap-16 scroll-auto ransition-transform duration-300'>
        { searchItem.map((item,idx)=>{
-          return <div className='w-auto h-auto items-center rounded-md'>
+          return <div className='w-auto bg-amber-400 bg-opacity-10 h-auto items-center rounded-md'>
              <img className='h-95 w-auto border-1 rounded hover:scale-95 shadow-lg shadow-amber-50 object-cover items-center' src={item.Poster} alt="" />
             <div className='p-2 '>
             <h1 className='font-semibold mb-2'>🎬{item.Title}</h1>
